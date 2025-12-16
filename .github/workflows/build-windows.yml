@@ -23,9 +23,15 @@ jobs:
         run: npm ci
 
       - name: Install native printer module (Windows runner)
+        shell: powershell
         run: |
-          echo "Installing printer native module (no-save)..."
-          npm install printer --no-save || echo "Warning: printer install failed (non-fatal). Continue to build installer without native module."
+          Write-Host "Installing printer native module (no-save, ignoring peer deps if needed)..."
+          npm install printer --no-save --legacy-peer-deps
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "Warning: printer install failed (non-fatal). Continue to build installer without native module."
+            # Ensure this step does not fail the job
+            exit 0
+          }
 
       - name: Build web assets
         run: npm run web:build

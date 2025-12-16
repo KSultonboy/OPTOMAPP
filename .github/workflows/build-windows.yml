@@ -25,6 +25,16 @@ jobs:
       - name: Build web assets
         run: npm run web:build
 
+      - name: Show Node/npm and web-build contents (debug)
+        run: |
+          echo "## Node / npm versions"
+          node -v
+          npm -v
+          echo "## web-build folder contents"
+          dir web-build || echo "web-build not found"
+          echo "## root folder contents"
+          dir
+
       - name: Build Windows installer
         env:
           # Optional: set these secrets in the repository to code-sign the installer

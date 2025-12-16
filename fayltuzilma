@@ -1,0 +1,87 @@
+Project file tree for OptomApp
+
+Root:
+- app.json
+- package.json
+- package-lock.json
+- tsconfig.json
+- README.md
+- .gitignore
+- eslint.config.js
+
+app/
+- _layout.tsx
+- login.tsx
+- modal.tsx
+- services/
+  - api.ts (removed/placeholder under app previously; real client at /services/api.ts)
+- (tabs)/
+  - _layout.tsx
+  - index.tsx
+  - acceptance.tsx
+  - history.tsx
+  - reports.tsx
+  - sales.tsx
+
+backend/
+- package.json
+- package-lock.json
+- README.md
+- server.js
+- db.js
+- test-api.js
+- optom.db (SQLite database file)
+
+components/
+- themed-button.tsx
+- themed-text.tsx
+- themed-view.tsx
+- hello-wave.tsx
+- haptic-tab.tsx
+- external-link.tsx
+- parallax-scroll-view.tsx
+- ui/
+  - collapsible.tsx
+  - icon-symbol.tsx
+  - icon-symbol.ios.tsx
+
+context/
+- AppContext.tsx
+
+hooks/
+- use-color-scheme.ts
+- use-color-scheme.web.ts
+- use-theme-color.ts
+
+constants/
+- theme.ts
+
+utils/
+- pdfGenerator.ts
+
+assets/
+- images/
+  - android-icon-background.png
+  - android-icon-monochrome.png
+  - android-icon-foreground.png
+  - splash-icon.png
+  - react-logo@3x.png
+  - react-logo@2x.png
+  - react-logo.png
+  - partial-react-logo.png
+  - icon.png
+  - favicon.png
+
+.vscode/
+- settings.json
+- extensions.json
+
+scripts/
+- reset-project.js
+
+Notes:
+- The API client used by the app lives at /services/api.ts (Platform-aware BASE_URL). There used to be a duplicate under /app/services which was treated as an Expo route and then removed/turned into placeholder.
+- Backend provides REST endpoints: /products (GET, POST, PUT, DELETE), /products/:id (GET), /transactions (GET, POST), /transactions/:id (DELETE, PUT for notes), /login, /health, /reset (dev).
+- DB file `backend/optom.db` contains seeded sample data if `products` table is empty.
+
+If you'd like a different format (JSON, markdown tree, or including file sizes/modified times), tell me which format you prefer and I'll update `fayltuzilma` accordingly.

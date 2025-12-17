@@ -8,7 +8,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "web:build": "expo export:web --output-dir web-build",
+    "web:build": "expo export -p web --output-dir web-build",
     "lint": "expo lint",
     "electron:dev": "concurrently \"expo start --web\" \"wait-on http://localhost:19006 && electron electron/main.js\"",
     "electron:build": "npm run web:build && electron-builder --win --x64"

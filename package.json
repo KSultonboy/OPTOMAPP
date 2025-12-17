@@ -13,7 +13,7 @@
     "web:build": "expo export -p web --output-dir web-build",
     "lint": "expo lint",
     "electron:dev": "concurrently \"expo start --web\" \"wait-on http://localhost:19006 && electron electron/main.js\"",
-    "electron:build": "npm run web:build && electron-builder --win --x64"
+    "electron:build": "npm run web:build && electron-builder --win --x64 -p never"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",

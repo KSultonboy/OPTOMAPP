@@ -2,6 +2,8 @@
   "name": "optomapp",
   "main": "electron/main.js",
   "version": "1.0.0",
+  "description": "OptomApp Desktop Application",
+  "author": "OptomApp Team",
   "scripts": {
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
